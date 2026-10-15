@@ -208,7 +208,7 @@ st.subheader("📋 Historial de Rangos de Balance (Filtrado 08:00 - 12:00 NY)")
 tabla_data = []
 for r in rangos_balance:
     horas_rango = data.loc[r['inicio']:r['fin']].index.hour
-    superpone_operativa = any((h >= 22 and h <= 2) for h in horas_rango)
+    superpone_operativa = any((h >= 8 and h <= 12) for h in horas_rango)
 
     if superpone_operativa:
         tabla_data.append({
